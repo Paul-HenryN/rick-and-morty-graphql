@@ -11,13 +11,16 @@
   },
   "dependencies": {
     "@apollo/client": "^3.9.5",
+    "autoprefixer": "^10.4.17",
     "graphql": "^16.8.1",
+    "postcss": "^8.4.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/client-preset": "^4.2.2",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.0",
     "@parcel/watcher": "^2.4.0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",

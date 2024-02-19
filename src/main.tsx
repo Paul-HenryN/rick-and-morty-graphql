@@ -1,40 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import "./index.css";
 
-const client = new ApolloClient({
-  uri: 'https://rickandmortyapi.com/graphql',
+export const client = new ApolloClient({
+  uri: "https://rickandmortyapi.com/graphql",
   cache: new InMemoryCache(),
 });
 
-// const client = ...
-
-client
-  .query({
-    query: gql`
-      query Character {
-        characters {
-          info {
-            count
-            pages
-            next
-            prev
-          }
-          results {
-            name
-            image
-          }
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result));
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
-
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </React.StrictMode>
+);
