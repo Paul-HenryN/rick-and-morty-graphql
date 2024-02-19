@@ -12,7 +12,7 @@ export default function CharacterCard({
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
       <figure>
-        <img src={image!} alt={name!} />
+        <img src={image!} alt={name!} className="rounded-lg m-3" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
